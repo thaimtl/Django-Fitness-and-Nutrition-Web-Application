@@ -2,6 +2,9 @@
 
 Eat to Fit is a comprehensive web application designed to help users achieve their fitness and nutrition goals. The platform offers personalized nutrition plans, workout routines, and progress tracking to ensure users stay on track and reach their goals. Based on the recommendations from the web, the user can create their own meal plan and workout plan.
 
+## Demonstration
+[Watch my YouTube video](https://youtu.be/O84GT0yXRjc)
+
 ## Distinctiveness and Complexity
 
 ### Distinctiveness
