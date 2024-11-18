@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+{% load static %}
+
+{% block body %}
+<div class="about-container">
+    <h2 class="about-title">About Eat to Fit</h2>
+    <div class="about-content">
+        <p>
+            This website provides you with the tools and resources you need to achieve your fitness goals. Whether you're looking to lose weight, build muscle, or just improve your overall health, we're here to help.
+        </p>
+        <p>
+            Our platform offers personalized nutrition plans, workout routines, and progress tracking to ensure you stay on track and reach your goals. We believe in a holistic approach to fitness, combining both physical and mental well-being.
+        </p>
+        <p>
+            If you have any questions or feedback, please feel free to reach out to us at <a href="mailto: thaitran196712@gmail.com">here.</a>
+        </p>
+        <p>
+            Sources:
+        </p>
+        <ul class="sources-list">
+            <li>Personal experience.</li>
+            <li><a href="https://www.healthline.com/nutrition">Healthline.</a></li>
+            <li>Chris Heria and other YouTube fitness influencers.</li>
+            <li>Consult <a href="{% url 'resources' %}">resources</a> for more information.</li>
+        </ul>
+    </div>
+</div>
+{% endblock %}

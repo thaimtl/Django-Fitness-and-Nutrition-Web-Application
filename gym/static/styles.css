@@ -1,0 +1,361 @@
+/* LAYOUT */
+*{
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    min-height:100vh;
+}
+
+h1 {
+    color: #333;
+}
+
+p {
+    color: #666;
+}
+.container-index {
+    margin: 200px auto;
+    max-width: 600px; 
+    padding: 20px;
+    text-align: center;
+}
+.col-md-4 {
+    margin-bottom: 20px;
+}
+
+.mx-md-4 {
+    margin-left: 1.5rem !important;
+    margin-right: 1.5rem !important;
+}
+.text-center {
+    text-align: center;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+nav{
+    background-color:#FFFFFF;
+    box-shadow: 3px 3 px 5px rgba(0,0,0,0.1);
+    display: flex;
+    justify-content: center;
+}
+nav ul{
+    width: 100px;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+nav li{
+    height:50px;
+    white-space: nowrap;
+}
+nav a{
+    height: 100%;
+    padding:0 30px;
+    text-decoration: none;
+    display: flex ;
+    align-items: center;
+    color: black;
+}
+nav a:hover{
+    background-color: #909090;
+}
+nav li:first-child{
+    margin-right:auto;
+}
+.sidebar{
+    position:fixed;
+    top:0;
+    right: 0;
+    height: 100vh;
+    width:250px;
+    z-index:999;
+    background-color: white;
+    backdrop-filter: blur(255,255,255,0.2);
+    box-shadow:-10px 0 10px rgba(0,0,0,0.1);
+    display:none;
+    flex-direction:column;
+    align-items:flex-start;
+    justify-content: flex-start;
+}
+.sidebar li{
+    width: 100%;
+}
+.sidebar a{
+    width: 100%;
+}
+.menu-button{
+    display:block;
+}
+@media(max-width:850px){
+    .hideOnMobile{
+        display:none;
+    }
+}
+@media(max-width:400px){
+    .sidebar{
+        width :100%;
+    }
+}
+/*Index Page*/
+/* Text Highlight for Welcome Message */
+.text-highlight {
+    background-color:rgba(255, 255, 255, 0.8); 
+    padding: 5px 10px; 
+    border-radius: 4px; 
+    display: inline-block; 
+    color: black; 
+    font-weight: bold; 
+}
+#index-page {
+    color: white; 
+}
+
+#index-page .container {
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    
+}
+.background {
+    background-image: url(background1.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh; /* Full viewport height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+#index-page h1, #index-page h2, #index-page p {
+    color: black; 
+}
+/* ABOUT US PAGE */
+.about-container {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: 40px auto;
+    text-align: left;
+}
+
+.about-title {
+    font-size: 2.5em;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.about-content p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    color: #666;
+}
+.sources-list {
+    font-size: 0.9em;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    color: #666;
+}
+
+.sources-list li {
+    font-size: 0.9em;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    color: #666;
+}
+/* Profile Page */
+.profile-container {
+    max-width: 600px;
+    margin: auto;
+    text-align: center;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.profile-container h2 {
+    margin-bottom: 20px;
+}
+
+.profile-container .form-group {
+    margin-bottom: 15px;
+}
+
+.profile-container .form-control {
+    width: 100%;
+}
+
+.profile-container .btn {
+    width: 100%;
+}
+
+.success-message {
+    display: none;
+    color: green;
+    font-weight: bold;
+    margin-top: 20px;
+}
+/* Nutrition Page */
+.container-nutrition {
+    max-width: 1200px; /* Increase the max-width to make the container wider */
+    margin: 150px auto; 
+    padding: 20px;
+    text-align: center;
+}
+
+.col-md-4 {
+    margin-bottom: 20px;
+}
+
+.mx-md-4 {
+    margin-left: 1.5rem !important;
+    margin-right: 1.5rem !important;
+}
+
+/* Custom styles for Log Food form */
+.log-food-form .form-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 15px;
+}
+
+.log-food-form .form-group label {
+    margin-bottom: 5px;
+}
+
+.log-food-form .form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.log-food-form .btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.log-food-form .btn:hover {
+    background-color: #0056b3;
+}
+/* Gym Fitness Page */
+.workout-selection {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+
+}
+
+.workout-selection img {
+    object-fit: cover; /* Ensure images cover the area without distortion */
+    border-radius: 8px; /* Optional: Add rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add a shadow effect */
+    max-width: 55%; /* Limit the width of the images */
+    cursor: pointer; /* Change the cursor to a pointer when hovering over images */
+    max-height: 55%; /* Limit the height of the images */
+    transition: transform 0.2s; /* Add a smooth transition effect */
+    align-items: center;
+    position: center;
+    margin: 20px;
+}
+
+.workout-selection p {
+    margin-top: 10px;
+    font-weight: bold;
+}
+.container-gym-fitness {
+    border-left: 5px; 
+    padding-left: 20px; 
+    margin-left: 20px; 
+}
+
+.workout-plan {
+    justify-content: center;
+    text-align:center;
+    gap: 10px; 
+    margin-top: 20px;
+    border-left:5px;
+}
+.my-workout-plan {
+    justify-content: center;
+    text-align:center;
+    gap: 10px; 
+    margin-top: 20px;
+    border-left:5px;
+
+}
+/* Custom styles for Workout Plan form */
+/* Center the form elements and labels */
+.workout-form-group {
+    text-align: left;
+    margin-bottom: 15px;
+}
+
+.workout-form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.workout-form-group input,
+.workout-form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.workout-form-group textarea {
+    height: 100px;
+    resize: vertical;
+}
+/* Resource Page */
+.resources-container {
+    text-align: center;
+    margin: 0 auto;
+    max-width: 800px;
+}
+
+.resources-container h2, .resources-container h3 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.resources-container p {
+    margin-bottom: 15px;
+}
+
+.resources-container a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.resources-container a:hover {
+    text-decoration: underline;
+}
+

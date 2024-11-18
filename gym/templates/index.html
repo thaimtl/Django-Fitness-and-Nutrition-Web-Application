@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+
+{% block title %}Eat to Fit{% endblock %}
+{% block body %}
+<div class ="background">
+    <div id="index-page" class="container-index">
+            <h1 class="text-center text-highlight">Welcome to Eat to Fit</h1>
+            <p class="text-center text-highlight">Your one stop shop for all things fitness and nutrition</p>
+        
+            <div class="row">
+                
+                    <h2 class="text-center text-highlight">Our Mission</h2>
+                    <p class="text-center text-highlight">Our mission is to provide you with the tools and resources you need to achieve your fitness goals. Whether you're looking to lose weight, build muscle, or just improve your overall health, we're here to help.</p>
+            
+                    
+                    {% if not user.is_authenticated %}
+                    <h2 class="text-center text-highlight">Get Started</h2>
+                    <p class="text-center text-highlight">Ready to take the first step towards a healthier you? Sign up for an account today and start tracking your progress. It's free and easy to get started!</p>
+                    <a href="{% url 'register' %}" class="btn btn-primary">Sign Up</a>
+                    {% endif %}
+            </div>   
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,67 @@
+{% extends "layout.html" %}
+{% load static %}
+{% block title %}Arms Day{% endblock %}
+
+{% block body %}
+<h1 class="text-center"><strong>Workout for Arms</strong></h1>
+
+<h2 class="text-center">Recommended Exercises</h2>
+<div class="workout-plan">
+    {% for plan in default_workout_plans %}
+    <div class="workout">
+        <h2>{{ plan.name_of_exercise|upper }}</h2>
+        <p><strong>Sets:</strong> {{ plan.sets }}</p>
+        <p><strong>Reps:</strong> {{ plan.reps }}</p>
+        <p><strong>Description:</strong> <a href="{{ plan.description }}" target="_blank">{{ plan.description }}</a></p>
+    </div>
+    {% endfor %}
+</div>
+
+<h2 class="text-center">Your Exercises</h2>
+<div class="my-workout-plan">
+    {% for plan in user_workout_plans %}
+    <div class="workout">
+        <h2>{{ plan.name_of_exercise|upper }}</h2>
+        <p><strong>Sets:</strong> {{ plan.sets }}</p>
+        <p><strong>Reps:</strong> {{ plan.reps }}</p>
+        <p><strong> Weight:</strong> {{ plan.weight_trained }}</p>
+        <p><strong>Description:</strong> <a href="{{ plan.description }}" target="_blank">{{ plan.description }}</a></p>
+        <form method="post" action="{% url 'remove_exercise' plan.id %}" class="delete-exercise-form">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-danger">Remove</button>
+        </form>
+    </div>
+    {% endfor %}
+</div>
+
+<div id="add-exercise-form" class="workout-plan">
+    <h2>Add Exercise</h2>
+    <form id="add-exercise" method="post" action="{% url 'add_exercise' %}">
+        {% csrf_token %}
+        <div class="workout-form-group">
+            {{ exercise_form.name_of_exercise.label_tag }}<br>
+            {{ exercise_form.name_of_exercise }}
+        </div>
+        <div class="workout-form-group">
+            {{ exercise_form.sets.label_tag }}<br>
+            {{ exercise_form.sets }}
+        </div>
+        <div class="workout-form-group">
+            {{ exercise_form.reps.label_tag }}<br>
+            {{ exercise_form.reps }}
+        </div>
+        <div class="workout-form-group">
+            {{ exercise_form.weight_trained.label_tag }}<br>
+            {{ exercise_form.weight_trained }}
+        </div>
+        <div class="workout-form-group">
+            {{ exercise_form.description.label_tag }}<br>
+            {{ exercise_form.description }}
+        </div>
+        <input type="hidden" name="workout_type" value="arms">
+        <button type="submit" class="btn btn-primary">Add Exercise</button>
+    </form>
+</div>
+
+<script src="{% static 'gym.js' %}"></script>
+{% endblock %}

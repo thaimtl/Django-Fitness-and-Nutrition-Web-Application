@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+{% load static %}
+{% block title %}Abs Day{% endblock %}
+
+{% block body %}
+<h1 class="text-center"><strong>Workout for Abs</strong></h1>
+<h2 class = "text-center">It is recommended to follow one of these abs circuit videos at least twice a week </h2>
+<h4 class = "text-center"> <strong>Important: </strong> You should try every of these workout circuits and pick the one that suits you the most </h4>
+<div class= "text-center">
+    <ul><a href="https://www.youtube.com/watch?v=P1mInEK7BEU" target="_blank">30 Minute Abs Workout by Chris Heria</a></ul>
+    <ul><a href ="https://www.youtube.com/watch?v=XgI_p8bKg78&t=735s" target ="_blank">20 Minute Abs Workout by Chris Heria</a></ul>
+    <ul><a href ="https://www.youtube.com/watch?v=L1BeGwFoNqk" target="_blank">20 Minute Abs Workout by TIFF X DAN</a></ul>
+    <ul><a href="https://www.youtube.com/watch?v=Cnmy08JgakM" target="_blank">15 Minute Abs Workout by MadFit</a></ul>
+    <ul><a href="https://www.youtube.com/watch?v=xRXhpMsLaXo" target="_blank">10 Minute Abs Workout by Chris Heria</a></ul>
+    <ul><a href="https://www.youtube.com/watch?v=BdhqubW1GJE" target ="_blank">10 Minute Abs Workout by TIFF X DAN</a></ul>
+    <ul><a href="https://www.youtube.com/watch?v=AnYl6Nk9GOA" target="_blank">10 Minute Abs Workout by Pamela Reif</a></ul>
+    <ul><a href="https://www.youtube.com/watch?v=2pLT-olgUJs" target="_blank">10 Minute Abs Workout by Chloe Ting</a></ul>
+    <ul><a href="https://www.youtube.com/watch?v=Dl8N_8UtWUU" target="_blank">10 Minute Abs Workout by MadFit</a></ul>
+    <ul><a href="https://www.youtube.com/watch?v=sXkmug9TyZs" target="_blank">6 Minute Abs Workout by Chris Heria</a></ul>
+
+</div>
+<h2 class="text-center">You Can Also Add Your Favorite Abs Workout!</h2>
+<div class="text-center">
+    <form id="add-link-form" method="post" action="{% url 'workout_abs' %}">
+        {% csrf_token %}
+        <div class="form-group">
+            {{ form.title.label_tag }}<br>
+            {{ form.title }}
+        </div>
+        <div class="form-group">
+            {{ form.url.label_tag }}<br>
+            {{ form.url }}
+        </div>
+        <button type="submit" class="btn btn-primary">Add Link</button>
+    </form>
+</div>
+
+<h2 class="text-center">Your Favorite Abs Workout: </h2>
+<div class="text-center">
+    <ul>
+        {% for link in user_links %}
+        <li>
+            <a href="{{ link.url }}" target="_blank">{{ link.title }}</a>
+            <form method="post" action="{% url 'remove_link' link.id %}" class="delete-link-form" style="display:inline;">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-danger btn-sm">Remove</button>
+            </form>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}

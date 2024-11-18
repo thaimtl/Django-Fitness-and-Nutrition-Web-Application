@@ -1,0 +1,65 @@
+{% extends "layout.html" %}
+
+{% block title %}Nutrition{% endblock %}
+
+{% block body %}
+<div class="container-nutrition">
+    <div class="row">
+        <div class="col-md-4 mb-4">
+            <h2>Nutrition Advice</h2>
+            <form id="nutrition-form" method="post" action="{% url 'nutrition' %}">
+                {% csrf_token %}
+                <div class="form-group">
+                    Choose Your Meal Plan:
+                    {{ form.meal_plan }}
+                </div>
+                <button type="submit" class="btn btn-primary">Get Advice</button>
+            </form>
+            <div id="nutrition-plan">
+                {% if nutrition_plan %}
+                <h3>Recommended Daily Nutrition Intake</h3>
+                <p>Calories: <span id="nutrition-calories">{{ nutrition_plan.calories }}</span></p>
+                <p>Proteins: <span id="nutrition-protein">{{ nutrition_plan.protein }}</span> grams</p>
+                <p>Carbs: <span id="nutrition-carbs">{{ nutrition_plan.carbs }}</span> grams</p>
+                <p>Fats: <span id="nutrition-fats">{{ nutrition_plan.fats }}</span> grams</p>
+                <p>BMI: <span id="nutrition-bmi">{{ nutrition_plan.bmi }}</span></p>
+                <p>According to your BMI, you are <span id="nutrition-bmi-rank">{{ bmi_rank }}</span></p>
+                <strong>Build your plan now by checking how much macros are in the food that you are consuming everyday <a href="https://www.nutritionvalue.org/" target="_blank">here</a>.</strong>
+                {% endif %}
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <h2>Log Food</h2>
+            <form id="log-food-form" class="log-food-form" method="post" action="{% url 'log_food' %}">
+                {% csrf_token %}
+                {{ food_log_form.as_p }}
+                <button type="submit" class="btn btn-primary">Log Food</button>
+            </form>
+        </div>
+        <div class="col-md-4 mb-4">
+            <h2>Your Food Logs</h2>
+            <ul id="food-log-list">
+                {% for log in food_logs %}
+                <li>
+                    <strong>{{ log.food_name }}</strong> - {{ log.date_logged }}<br>
+                    Quantity: {{ log.quantity }}<br>
+                    Calories: <span class="calories">{{ log.calories }}</span><br>
+                    Protein: <span class="protein">{{ log.protein }}</span> grams<br>
+                    Carbs: <span class="carbs">{{ log.carbs }}</span> grams<br>
+                    Fats: <span class="fats">{{ log.fats }}</span> grams<br>
+                    <form method="post" action="{% url 'delete_food_log' log.id %}" class="delete-food-log-form">
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-danger">Delete</button>
+                    </form>
+                </li>
+                {% endfor %}
+            </ul>
+            <h3>Total Nutritional Intake</h3>
+            <p>Total Calories: <span id="total-calories">{{ total_calories }}</span></p>
+            <p>Total Protein: <span id="total-protein">{{ total_protein }}</span> grams</p>
+            <p>Total Carbs: <span id="total-carbs">{{ total_carbs }}</span> grams</p>
+            <p>Total Fats: <span id="total-fats">{{ total_fats }}</span> grams</p>
+        </div>
+    </div>
+</div>
+{% endblock %}

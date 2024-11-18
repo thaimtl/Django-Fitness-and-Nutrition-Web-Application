@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+{% block body %}
+<div class="d-flex justify-content-center align-items-center vh-100">
+    <div class="profile-container">
+        <h2>Your Profile</h2>
+        <form method="post" action="{% url 'edit_profile' %}" id="profile-form">
+            {% csrf_token %}
+            <div class="form-group">
+                {{ form.age.label_tag }}
+                {{ form.age }}
+            </div>
+            <div class="form-group">
+                {{ form.sex.label_tag }}
+                {{ form.sex }}
+            </div>
+            <div class="form-group">
+                {{ form.weight.label_tag }}
+                {{ form.weight }}
+                <small class="form-text text-muted">Your weight in kg.</small>
+            </div>
+            <div class="form-group">
+                {{ form.height.label_tag }}
+                {{ form.height }}
+                <small class="form-text text-muted">Your height in cm.</small>
+            </div>
+            <div class="form-group">
+                {{ form.fitness_goal.label_tag }}
+                {{ form.fitness_goal }}
+            </div>
+            <button type="submit" class="btn btn-primary" id="update-button">Update</button>
+        </form>
+        <div class="success-message" id="success-message" style="display: none;">
+            Your profile has been updated.
+        </div>
+    </div>
+</div>
+{% endblock %}

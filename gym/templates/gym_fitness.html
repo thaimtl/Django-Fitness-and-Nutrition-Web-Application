@@ -1,0 +1,64 @@
+{% extends "layout.html" %}
+{% load static %}
+
+{% block title %}Gym and Fitness{% endblock %}
+
+{% block body %}
+<div class="container-gym-fitness">
+    <h2 class="text-center"><strong>Gym and Fitness</strong></h2>
+    <h3 class="text-center">Let's get started! Pick the body part that you want to train</h3>
+    <h4> <strong>A few important things to keep in mind: </strong> </h4>
+
+    <br>
+    <div>
+        <li>Make sure to warm up before starting your workout. This will help prevent injuries and improve your performance.</li>
+        <li>Stay hydrated throughout your workout. Drink water before, during, and after your training session.</li>
+        <li>Focus on proper form and technique. It's better to do fewer reps with good form than more reps with bad form.</li>
+        <li>Listen to your body. If you feel pain or discomfort, stop the exercise immediately and consult a fitness professional.</li>
+        <li>Rest is crucial for muscle recovery and growth. You should not train any body part two days in a row. It is better to let them rest for at least 24 hours after an intense training session. </li>
+    </div>
+
+    <div class="workout-selection">
+        <div class="row">
+            <div class="col-md-4">
+                <a href="{% url 'workout_chest' %}">
+                    <img src="{% static 'images/chest.jpg' %}" alt="Chest Day" class="workout-image">
+                    <p>Chest Day</p>
+                </a>
+            </div>
+            <div class="col-md-4">
+                <a href="{% url 'workout_abs' %}">
+                    <img src="{% static 'images/abs.jpg' %}" alt="Abs Day" class="workout-image">
+                    <p>Abs Day</p>
+                </a>
+            </div>
+            <div class="col-md-4">
+                <a href="{% url 'workout_legs' %}">
+                    <img src="{% static 'images/legs.jpg' %}" alt="Leg Day" class="workout-image">
+                    <p>Leg Day</p>
+                </a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <a href="{% url 'workout_back' %}">
+                    <img src="{% static 'images/back.jpg' %}" alt="Back Day" class="workout-image">
+                    <p>Back Day</p>
+                </a>
+            </div>
+            <div class="col-md-4">
+                <a href="{% url 'workout_shoulders' %}">
+                    <img src="{% static 'images/shoulders.jpg' %}" alt="Shoulder Day" class="workout-image">
+                    <p>Shoulder Day</p>
+                </a>
+            </div>
+            <div class="col-md-4">
+                <a href="{% url 'workout_arms' %}">
+                    <img src="{% static 'images/arms.jpg' %}" alt="Arm Day" class="workout-image">
+                    <p>Arm Day</p>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
