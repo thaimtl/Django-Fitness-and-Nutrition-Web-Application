@@ -80,6 +80,8 @@ The project demonstrates complexity through its various features and functionali
 -When the user clicks on feedback, they are directed to an email box where they can email directly straight to me. 
 
 ### Features to be added/improved
--For the box "description" in the adding exercise form, I will implement a custom template filters so that if the user enters a link, the hyperlink shall appear. Otherwise, it would just be plain text of blue color. I did not have the resource to do this and as you can see, each of the exercise description in the current version actually has a hyperlink no matter what was the input. If we click on this hyperlink, it would lead us to nowhere. 
+-For the box "description" in the adding exercise form, I will implement a custom template filters so that if the user enters a link, the hyperlink shall appear. Otherwise, it would just be plain text of blue color. I did not have the resource to do this and as you can see, each of the exercise description in the current version actually has a hyperlink no matter what was the input. If we click on this hyperlink, it would lead us to nowhere.
+
 -The UX/UI can certainly be improved. I also think about turning the list of workout exercises into a table.
+
 -A daily workout journal for the user to keep track of their progress can certainly be added to each of the workout template. 
