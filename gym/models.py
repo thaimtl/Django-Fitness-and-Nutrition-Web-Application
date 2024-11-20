@@ -69,7 +69,7 @@ class NutritionPlan(models.Model):
     def rank_bmi(self):
         if self.bmi < 18.5:
             return "underweight. You need to increase your calories intake."
-        elif 18.5 <= self.bmi < 24.9:
+        elif 18.5 <= self.bmi <= 24.9:
             return "normal weight. Keep it going!"
         elif 25 <= self.bmi < 29.9:
             return "overweight. You need to exercise more and/or decrease your calories intake."
