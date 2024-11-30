@@ -60,18 +60,20 @@ The project demonstrates complexity through its various features and functionali
 1. **Clone the Repository**: 
 
    git clone https://github.com/thaimtl/eat-to-fit.git
+   
    cd eat-to-fit
-2. **Install Dependencies**:
+3. **Install Dependencies**:
  
     pip install -r requirements.txt
-3. **Apply Migrations**: 
+4. **Apply Migrations**: 
   
     python manage.py makemigrations
+   
     python manage.py migrate
-4. **Run the Server**:
+6. **Run the Server**:
    
     python manage.py runserver
-5. **FOR ADMINISTRATION**:
+7. **FOR ADMINISTRATION**:
  
     python manage.py createsuperuser
 
